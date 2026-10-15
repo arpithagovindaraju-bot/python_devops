@@ -1,0 +1,37 @@
+update the server.conf file to 500, when maximum connection reached 200.
+
+Algo:
+1. read the file
+2. create variable/list store the read file to it
+3. write mode open file
+4. updating max connection lines
+
+work: if connection
+
+code:
+
+function:
+def update_server_config(file_path,key,value) as file:
+   with open(file_path, "r"):
+     lines = file_readlines() #inbuilt function
+
+   with open(file_path,"w"):
+     for line in lines:
+        if key in line:
+          file.write(key + "=" + value + "\n" )
+        else:
+         file.write(line)
+
+
+update_server_config("server.config","MAX_CONECTONS", "1000")
+
+
+
+
+
+
+
+
+
+
+
